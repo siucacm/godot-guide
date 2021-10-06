@@ -1,5 +1,5 @@
 # Godot(Guh Doh) Guide
-A tldr; of some godot stuff
+This is some very basic godot knowledge to quickly understand some of the basics. If you are interested I highly recommend reading the documentation, as it's extremely well made, and has a lot of work put into it. You can find it [Here](https://docs.godotengine.org/en/stable/)
 
 
 ## Editor Overview
@@ -69,8 +69,46 @@ It will then ask for a name for the scene and a place to put it, feel free to na
 
 First let's drag Player.tscn onto our root node to make it a child and "instance" it. As you can see, it will make a "Player2" Node, and you can do this as much as we want.
 
+![PlayerTwo](imgs/player2.png)
+
 What happens if we wanted our player to now dual wield and have 2 weapons? Well we can go into the scene and modify it, we can either double click "Player.tscn" in our file system or click the movie clip icon next to our player and you will get something like below.
 
 ![IntoScene](imgs/intoscene.png)
 
 As you can see our root node is now the root node we saved for our scene, and another tab is opened next to our main scene. It shows that these are two isolated parts of our game, and we use instancing to use them together. Why would you want to make a scene and instance it? Well if we have 100 instances of something, and we want to change the color of it, we would just change it in our base player scene, and it will be updated to all instances of that scene.
+
+## Scripting
+
+Scripting in godot is done in GDScript, which is a python-like language with some godot flavor added in. Every node can have exactly one script, promoting each component doing only one thing.
+
+### Creating a script
+
+To create a script, right click a node and click "Attach Script".
+
+![Script img](https://docs.godotengine.org/en/stable/_images/add_script.png)
+
+And then give it a path and name
+
+![Script info](https://docs.godotengine.org/en/stable/_images/script_create.png)
+
+This will create and attach the script to the node, you can access the script by clicking the little scroll icon next to the node 
+
+![Open Script](https://docs.godotengine.org/en/stable/_images/script_added.png)
+
+You will get something like this when you open it
+
+![Script show](https://docs.godotengine.org/en/stable/_images/script_template.png)
+
+The first line will be "extend \<Node>" where \<Node> is whatever node you attached the script onto (Node2D, Physics, etc)
+
+And then you have a function called _ready() which contains pass, which just denotes to do nothing.
+
+*Note: All godot called functions will start with _*
+
+## General Scripting Guide
+
+Scripting in godot, is a large topic despite it's basic syntax, it has a lot of nuance, instead of talking about it here, those interested should read these pages as the docs for godot are excellent.
+ 
+* [Basic Scripting](https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting.html)
+* [Advanced Scripting](https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_continued.html)
+* [Signals](https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html)
